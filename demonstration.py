@@ -18,10 +18,10 @@ apiToken = ""
 
 # Initialize a factory for producing a quantum-derived random ASCII "bit" string and produce 10 random strings
 bitStringGenerator = com.buie.quantum.factories.RandomBitStringFactory(bits=bits, weights=bitWeights, apiToken=apiToken)
-print("bitStringGenerator = {0}".format(bitStringGenerator))
+print("bitStringGenerator = {}".format(bitStringGenerator))
 for i in range(10):
 	randomString = bitStringGenerator.get()
-	print("{: 02d} - {} - {}".format((i + 1), randomString, len(randomString)))
+	print("{:2d} - {}".format((i + 1), randomString))
 
 
 print("\n\n")
@@ -29,10 +29,10 @@ print("\n\n")
 
 # Initialize a factory for producing a quantum-derived random integer and produce 10 random integers
 integerGenerator = com.buie.quantum.factories.RandomIntegerFactory(bits=16, weights=bitWeights, apiToken=apiToken)
-print("integerGenerator = {0}".format(integerGenerator))
+print("integerGenerator = {}".format(integerGenerator))
 for i in range(10):
 	randomInteger = integerGenerator.get()
-	print("{: 2d} - {}".format((i + 1), randomInteger))
+	print("{:2d} - {}".format((i + 1), randomInteger))
 
 
 print("\n\n")
@@ -40,10 +40,10 @@ print("\n\n")
 
 # Initialize a factory for producing a quantum-derived random floating-point number and produce 10 random floats
 floatGenerator = com.buie.quantum.factories.RandomFloatFactory(bits=4, weights=bitWeights, apiToken=apiToken)
-print("integerGenerator = {0}".format(floatGenerator))
+print("integerGenerator = {}".format(floatGenerator))
 for i in range(10):
 	randomFloat = floatGenerator.get()
-	print("{: 2d} - {}".format((i + 1), randomFloat))
+	print("{:2d} - {}".format((i + 1), randomFloat))
 
 
 print("\n\n")
@@ -51,10 +51,17 @@ print("\n\n")
 
 # Initialize a factory for producing a quantum-derived random integer reciprocal number and produce 10 random reciprocals
 reciprocalGenerator = com.buie.quantum.factories.RandomReciprocalFactory(bits=4, weights=bitWeights, apiToken=apiToken)
-print("reciprocalGenerator = {0}".format(reciprocalGenerator))
+print("reciprocalGenerator = {}".format(reciprocalGenerator))
 for i in range(10):
 	randomReciprocal = reciprocalGenerator.get()
-	print("{: 2d} - {}".format((i + 1), randomReciprocal))
+	print("{:2d} - {}".format((i + 1), randomReciprocal))
 
 
 print("\n\n")
+
+# Initialize a factory for producing a quantum-derived random list of bytes
+byteGenerator = com.buie.quantum.factories.RandomByteStreamFactory(bits=20, weights=bitWeights, apiToken=apiToken)
+print("byteGenerator = {}".format(byteGenerator))
+for i in range(10):
+	randomBytes = byteGenerator.get()
+	print("{:2d} - {}".format((i + 1), randomBytes))
